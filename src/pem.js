@@ -55,7 +55,7 @@ export function pem(string){
        * @returns {pemstring|TypeError} publicKey pem string
        */
       publicKey(type=""){
-         type = type!=="RSA"?"":type+" "
+         type = type!=="RSA"?"(RSA )?":type+" "
          return this.sure(type+"PUBLIC KEY")
       },
       /**
@@ -64,7 +64,7 @@ export function pem(string){
        * @returns {pemstring|TypeError} privateKey pem string
        */
       privateKey(type=""){
-         type = ["RSA","DSA","EC"].includes(type)==false?"":type+" "
+         type = ["RSA","DSA","EC"].includes(type)==false?"(RSA |EC |DSA )?":type+" "
          return this.sure(type+"PRIVATE KEY")
       },
       /**
