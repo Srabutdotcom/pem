@@ -8,7 +8,7 @@
 
 /**
  * @preserve
- * input pem string and return the expected type of pem string otherwise throw TypeError
+ * input pem string and return object containing: string, types, sure, certificate, privateKey, and publicKey to return the expected type of pem string otherwise throw TypeError
  * @param {string} string
  * @return {{string: pemstring, types:pemtype, regex:(type:pemtype)=>RegExp, sure:(type:pemtype)=>pemstring, publicKey:(type:("RSA"|""))=>pemstring, privateKey:(type:("RSA"|"EC"|"DSA"|""))=>pemstring, certificate:()=>pemstring}}
  */
