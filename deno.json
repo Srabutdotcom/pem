@@ -1,0 +1,17 @@
+{
+  "name": "@aicone/pem",
+  "version": "0.1.0",
+  "exports": "./src/pem.js",
+  "publish":{
+
+  },
+  "lint":{
+    "include": ["src/"],
+    "rules": {
+      "exclude": ["no-var", "no-explicit-any", "no-slow-types"]
+    }
+  },
+  "imports": {
+    "@std/assert": "jsr:@std/assert@^1.0.2"
+  }
+}
