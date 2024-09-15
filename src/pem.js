@@ -4,10 +4,9 @@
 /** @typedef {'RSA PRIVATE KEY'|'CERTIFICATE'|'RSA PUBLIC KEY'|'DSA PRIVATE KEY'|'PUBLIC KEY'|'PRIVATE KEY'|'PKCS7'|'NEW CERTIFICATE REQUEST'|'CERTIFICATE REQUEST'|'X509 CRL'|'EC PRIVATE KEY'|'(RSA |EC )?PRIVATE KEY'|'(RSA )?PUBLIC KEY'} pemtype various type of pemstring*/
 
 /**
- * @preserve
  * input pem string and return object containing: string, types, sure, certificate, privateKey, and publicKey to return the expected type of pem string otherwise throw TypeError
- * @param {string} string
- * @return {{string: pemstring, types:pemtype, regex:(type:pemtype)=>RegExp, sure:(type:pemtype)=>pemstring, publicKey:(type:("RSA"|""))=>pemstring, privateKey:(type:("RSA"|"EC"|"DSA"|""))=>pemstring, certificate:()=>pemstring}}
+ * @param {string} string - pem string
+ * @return {{string: pemstring, types:pemtype, regex:(type:pemtype)=>RegExp, sure:(type:pemtype)=>pemstring, publicKey:(type:("RSA"|""))=>pemstring, privateKey:(type:("RSA"|"EC"|"DSA"|""))=>pemstring, certificate:()=>pemstring}} object containing: string, types, sure, certificate, privateKey, and publicKey
  */
 export function pem(string){
    string = String(string);
@@ -30,15 +29,15 @@ export function pem(string){
       }),
       /**
        * 
-       * @param {string} type 
-       * @returns {RegExp}
+       * @param {string} type - string
+       * @returns {RegExp} the regex
        */
       regex(type){
          return new RegExp(`^(-----BEGIN ${type}-----\r?\n?(?:[A-Za-z0-9+/=]+\r?\n?)*-----END ${type}-----)\r?\n?$`)
       },
       /**
        * return pemstring based on optional pem type otherwise throw TypeError
-       * @param {pemtype} type 
+       * @param {pemtype} type pem type
        * @returns {pemstring|TypeError} pemstring
        */
       sure(type){
@@ -51,7 +50,7 @@ export function pem(string){
       },
       /**
        * return publicKey pem string or throw TypeError
-       * @param {"RSA"|""} type 
+       * @param {"RSA"|""} type - type
        * @returns {pemstring|TypeError} publicKey pem string
        */
       publicKey(type=""){
