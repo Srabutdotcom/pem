@@ -1,7 +1,4 @@
 // @ts-self-types="./pem.d.ts"
-/** @typedef {string} base64 base64 as variant of string */
-/** @typedef {base64} pemstring pemstring as variant of base64 */
-/** @typedef {'RSA PRIVATE KEY'|'CERTIFICATE'|'RSA PUBLIC KEY'|'DSA PRIVATE KEY'|'PUBLIC KEY'|'PRIVATE KEY'|'PKCS7'|'NEW CERTIFICATE REQUEST'|'CERTIFICATE REQUEST'|'X509 CRL'|'EC PRIVATE KEY'|'(RSA |EC )?PRIVATE KEY'|'(RSA )?PUBLIC KEY'} pemtype various type of pemstring*/
 
 /**
  * input pem string and return object containing: string, types, sure, certificate, privateKey, and publicKey to return the expected type of pem string otherwise throw TypeError
@@ -31,7 +28,7 @@ export class Pem {
       '(RSA |EC )?PRIVATE KEY': '(RSA |EC )?PRIVATE KEY',
       '(RSA )?PUBLIC KEY' : '(RSA )?PUBLIC KEY'
    }
-   /**@type {string} string - description */
+   /**@type {string} string - pem string */
    string
    /**
     * 
@@ -57,7 +54,7 @@ export class Pem {
    }
    /**
     * return pemstring based on optional pem type otherwise throw TypeError
-    * @param {pemtype} type pem type
+    * @param {string} type pem type
     * @returns {string|TypeError} pemstring 
     */
    sure(type){
