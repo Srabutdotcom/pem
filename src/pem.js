@@ -42,7 +42,7 @@ export class Pem {
    }
    /**
        * return certificate pem string or throw TypeError
-       * @returns {pemstring|TypeError} certificate pem string
+       * @returns {string|TypeError} certificate pem string
        */
    certificate(){
       return this.sure(this.types.CERTIFICATE)
@@ -58,7 +58,7 @@ export class Pem {
    /**
     * return pemstring based on optional pem type otherwise throw TypeError
     * @param {pemtype} type pem type
-    * @returns {pemstring|TypeError} pemstring
+    * @returns {string|TypeError} pemstring 
     */
    sure(type){
       const generalType = '.*' 
@@ -71,7 +71,7 @@ export class Pem {
    /**
     * return publicKey pem string or throw TypeError
     * @param {"RSA"|""} type - type
-    * @returns {pemstring|TypeError} publicKey pem string
+    * @returns {string|TypeError} publicKey pem string
     */
    publicKey(type=""){
       type = type!=="RSA"?"(RSA )?":type+" "
@@ -80,7 +80,7 @@ export class Pem {
    /**
     * return privateKey pem string or throw TypeError
     * @param {"RSA|"DSA"|"EC"|""} type 
-    * @returns {pemstring|TypeError} privateKey pem string
+    * @returns {string|TypeError} privateKey pem string
     */
    privateKey(type=""){
       type = ["RSA","DSA","EC"].includes(type)==false?"(RSA |EC |DSA )?":type+" "
