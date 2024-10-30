@@ -1,7 +1,7 @@
 {
   "name": "@aicone/pem",
-  "version": "0.1.7",
-  "exports": "./src/pem.js",
+  "version": "0.1.8",
+  "exports": "./src/mod.ts",
   "publish":{
 
   },
