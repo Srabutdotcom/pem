@@ -1,7 +1,3 @@
-Here's a `README.md` based on your code:
-
----
-
 # @aicone/pem
 
 `@aicone/pem` is a JavaScript library for handling PEM-encoded strings, providing methods to validate and extract various PEM types, such as certificates, public keys, and private keys. This library supports different PEM types, including RSA, DSA, and EC formats, making it ideal for working with secure data in cryptographic and certificate-based applications.
